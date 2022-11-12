@@ -134,7 +134,7 @@ public class MainSceneController implements Initializable{
 		at3.setConverter(new PrevioticConverter());
 		at3.getSelectionModel().selectFirst();
 		
-		at4.getItems().addAll(tamaños());
+		at4.getItems().addAll(tamaÃ±os());
 		at4.setConverter(new PrevioticConverter());
 		at4.getSelectionModel().selectFirst();
 		
@@ -146,7 +146,7 @@ public class MainSceneController implements Initializable{
 		at6.setConverter(new PrevioticConverter());
 		at6.getSelectionModel().selectFirst();
 		
-		at7.getItems().addAll(tamaños());
+		at7.getItems().addAll(tamaÃ±os());
 		at7.setConverter(new PrevioticConverter());
 		at7.getSelectionModel().selectFirst();
 		
@@ -170,7 +170,7 @@ public class MainSceneController implements Initializable{
 		at13.setConverter(new PrevioticConverter());
 		at13.getSelectionModel().selectFirst();
 		
-		at14.getItems().addAll(año());
+		at14.getItems().addAll(aÃ±o());
 		at14.setConverter(new PrevioticConverter());
 		at14.getSelectionModel().selectFirst();
 		
@@ -250,7 +250,7 @@ public class MainSceneController implements Initializable{
 		try {
 			
 			Class.forName("org.postgresql.Driver");
-			Connection con=DriverManager.getConnection("jdbc:postgresql://localhost/datosNacimientos", "postgres", "QSCZSEwaxd");
+			Connection con=DriverManager.getConnection("jdbc:postgresql://localhost/datosNacimientos", "postgres", "*****");
 			ResultSet res = con.createStatement().executeQuery("select nom_loc, cve_ent from catemlna21 where cve_mun='0' and cve_loc='0'");
 			while(res.next()) {
 				items0.add(new Previotic(res.getString("nom_loc"),res.getInt("cve_ent")));
@@ -266,7 +266,7 @@ public class MainSceneController implements Initializable{
 		return items0;
 	}
 	
-	private ArrayList<Previotic> tamaños(){
+	private ArrayList<Previotic> tamaÃ±os(){
 		ArrayList<Previotic> items0 = new ArrayList<>();
 	
 		items0.add(new Previotic("De 1 a 999 habitantes",1));
@@ -285,7 +285,7 @@ public class MainSceneController implements Initializable{
 		items0.add(new Previotic("De 250000 a 499999 habitantes",14));
 		items0.add(new Previotic("De 500000 a 999999 habitantes",15));
 		items0.add(new Previotic("De 1000000 a 1499999 habitantes",16));
-		items0.add(new Previotic("De 1500000 y más habitantes",17));
+		items0.add(new Previotic("De 1500000 y mÃ¡s habitantes",17));
 		items0.add(new Previotic("No especificado",99));
 			
 		return items0;
@@ -306,7 +306,7 @@ public class MainSceneController implements Initializable{
 		
 		int i=10;
 		while(i<51) {
-			items0.add(new Previotic((i+" años"),i));
+			items0.add(new Previotic((i+" aÃ±os"),i));
 			i++;
 		}
 		items0.add(new Previotic("No especificado",99));
@@ -319,7 +319,7 @@ public class MainSceneController implements Initializable{
 		
 		int i=12;
 		while(i<99) {
-			items0.add(new Previotic((i+" años"),i));
+			items0.add(new Previotic((i+" aÃ±os"),i));
 			i++;
 		}
 		items0.add(new Previotic("No especificado",99));
@@ -360,7 +360,7 @@ public class MainSceneController implements Initializable{
 		return items0;
 	}
 	
-	private ArrayList<Previotic> año(){
+	private ArrayList<Previotic> aÃ±o(){
 		ArrayList<Previotic> items0 = new ArrayList<>();
 		
 		int i=1901;
@@ -378,7 +378,7 @@ public class MainSceneController implements Initializable{
 		
 		items0.add(new Previotic("Simple",1));
 		items0.add(new Previotic("Doble",2));
-		items0.add(new Previotic("Triple o más",3));
+		items0.add(new Previotic("Triple o mÃ¡s",3));
 		items0.add(new Previotic("No especificado",9));
 			
 		return items0;
@@ -387,16 +387,16 @@ public class MainSceneController implements Initializable{
 	private ArrayList<Previotic> ordenparto(){
 		ArrayList<Previotic> items0 = new ArrayList<>();
 		
-		items0.add(new Previotic("1° Orden del parto",1));
-		items0.add(new Previotic("2° Orden del parto",2));
-		items0.add(new Previotic("3° Orden del parto",3));
-		items0.add(new Previotic("4° Orden del parto",4));
-		items0.add(new Previotic("5° Orden del parto",5));
-		items0.add(new Previotic("6° Orden del parto",6));
-		items0.add(new Previotic("7° Orden del parto",7));
-		items0.add(new Previotic("8° Orden del parto",8));
-		items0.add(new Previotic("9° Orden del parto",9));
-		items0.add(new Previotic("10° Orden del parto",10));
+		items0.add(new Previotic("1Â° Orden del parto",1));
+		items0.add(new Previotic("2Â° Orden del parto",2));
+		items0.add(new Previotic("3Â° Orden del parto",3));
+		items0.add(new Previotic("4Â° Orden del parto",4));
+		items0.add(new Previotic("5Â° Orden del parto",5));
+		items0.add(new Previotic("6Â° Orden del parto",6));
+		items0.add(new Previotic("7Â° Orden del parto",7));
+		items0.add(new Previotic("8Â° Orden del parto",8));
+		items0.add(new Previotic("9Â° Orden del parto",9));
+		items0.add(new Previotic("10Â° Orden del parto",10));
 		items0.add(new Previotic("No especificado",99));
 			
 		return items0;
@@ -405,8 +405,8 @@ public class MainSceneController implements Initializable{
 	private ArrayList<Previotic> lugarparto(){
 		ArrayList<Previotic> items0 = new ArrayList<>();
 		
-		items0.add(new Previotic("Hospital o clínica oficial",1));
-		items0.add(new Previotic("Hospital o clínica privada",2));
+		items0.add(new Previotic("Hospital o clÃ­nica oficial",1));
+		items0.add(new Previotic("Hospital o clÃ­nica privada",2));
 		items0.add(new Previotic("En su domicilio",3));
 		items0.add(new Previotic("Otro",4));
 		items0.add(new Previotic("No especificado",9));
@@ -417,7 +417,7 @@ public class MainSceneController implements Initializable{
 	private ArrayList<Previotic> quienatendio(){
 		ArrayList<Previotic> items0 = new ArrayList<>();
 		
-		items0.add(new Previotic("Médico",1));
+		items0.add(new Previotic("MÃ©dico",1));
 		items0.add(new Previotic("Enfermera",2));
 		items0.add(new Previotic("Partera",3));
 		items0.add(new Previotic("Otro",4));
@@ -457,7 +457,7 @@ public class MainSceneController implements Initializable{
 		
 		items0.add(new Previotic("Soltera",1));
 		items0.add(new Previotic("Casada",2));
-		items0.add(new Previotic("Unión libre",3));
+		items0.add(new Previotic("UniÃ³n libre",3));
 		items0.add(new Previotic("Separada",4));
 		items0.add(new Previotic("Divorciada",5));
 		items0.add(new Previotic("Viuda",6));
@@ -470,8 +470,8 @@ public class MainSceneController implements Initializable{
 		ArrayList<Previotic> items0 = new ArrayList<>();
 		
 		items0.add(new Previotic("Sin escolaridad",1));
-		items0.add(new Previotic("De 1 a 3 años de primaria",2));
-		items0.add(new Previotic("De 4 a 5 años de primaria",3));
+		items0.add(new Previotic("De 1 a 3 aÃ±os de primaria",2));
+		items0.add(new Previotic("De 4 a 5 aÃ±os de primaria",3));
 		items0.add(new Previotic("Primaria completa",4));
 		items0.add(new Previotic("Secundaria o equivalente",5));
 		items0.add(new Previotic("Preparatoria o equivalente",6));
@@ -495,7 +495,7 @@ public class MainSceneController implements Initializable{
 	private ArrayList<Previotic> notrabajo(){
 		ArrayList<Previotic> items0 = new ArrayList<>();
 		
-		items0.add(new Previotic("Tiene trabajo o está buscando",1));
+		items0.add(new Previotic("Tiene trabajo o estÃ¡ buscando",1));
 		items0.add(new Previotic("Estudiante",2));
 		items0.add(new Previotic("Dedicado a quehaceres del hogar",3));
 		items0.add(new Previotic("Jubilado o pensionado",4));
@@ -525,7 +525,7 @@ public class MainSceneController implements Initializable{
 		try {
 			
 			Class.forName("org.postgresql.Driver");
-			Connection con=DriverManager.getConnection("jdbc:postgresql://localhost/datosNacimientos", "postgres", "QSCZSEwaxd");
+			Connection con=DriverManager.getConnection("jdbc:postgresql://localhost/datosNacimientos", "postgres", "******");
 			ResultSet res = con.createStatement().executeQuery("select nom_loc,cve_mun from catemlna21 where cve_loc='0' and cve_mun!='0' and cve_ent='"+entidad+"'");
 			while(res.next()) {
 				items0.add(new Previotic(res.getString("nom_loc")+" "+res.getInt("cve_mun"),res.getInt("cve_mun")));
@@ -547,7 +547,7 @@ public class MainSceneController implements Initializable{
 		try {
 			
 			Class.forName("org.postgresql.Driver");
-			Connection con=DriverManager.getConnection("jdbc:postgresql://localhost/datosNacimientos", "postgres", "QSCZSEwaxd");
+			Connection con=DriverManager.getConnection("jdbc:postgresql://localhost/datosNacimientos", "postgres", "******");
 			ResultSet res = con.createStatement().executeQuery("select nom_loc,cve_loc from catemlna21 where cve_loc!='0' and cve_mun='"+municipio+"' and cve_ent='"+entidad+"'");
 			while(res.next()) {
 				items0.add(new Previotic(res.getString("nom_loc")+" "+res.getInt("cve_loc"),res.getInt("cve_loc")));
